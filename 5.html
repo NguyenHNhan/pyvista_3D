@@ -1,0 +1,1311 @@
+
+<!DOCTYPE html>
+<html lang="en-GB"
+      dir="ltr"
+      class="">
+<head>
+    <title>05 Plotting - Trực qua... | VLUTE Wiki</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="robots" content="nofollow" />
+    <meta name="viewport" content="width=device-width">
+    <meta name="token" content="C0r52hiNx0iJBj8e9JrdQiWozxtcDwEk1ta7EWbv">
+    <meta name="base-url" content="http://huongdan.fit.vlute.edu.vn">
+    <meta name="theme-color" content="#206ea7"/>
+
+    <!-- Social Cards Meta -->
+    <meta property="og:title" content="05 Plotting - Trực qua... | VLUTE Wiki">
+    <meta property="og:url" content="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/page/05-plotting-truc-quan-hoa">
+        <meta property="og:description" content="1 Colormap Choices
+import thư viện
+from matplotlib.colors import ListedColormap
+import matplotlib...">
+
+    <!-- Styles and Fonts -->
+    <link rel="stylesheet" href="http://huongdan.fit.vlute.edu.vn/dist/styles.css?version=v23.01.1">
+    <link rel="stylesheet" media="print" href="http://huongdan.fit.vlute.edu.vn/dist/print-styles.css?version=v23.01.1">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="256x256" href="http://huongdan.fit.vlute.edu.vn/uploads/images/system/2023-03/BqSlogo-1.png">
+    <link rel="icon" type="image/png" sizes="180x180" href="http://huongdan.fit.vlute.edu.vn/uploads/images/system/2023-03/5sPlogo-1.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="http://huongdan.fit.vlute.edu.vn/uploads/images/system/2023-03/5sPlogo-1.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="http://huongdan.fit.vlute.edu.vn/uploads/images/system/2023-03/Dkologo-1.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="http://huongdan.fit.vlute.edu.vn/uploads/images/system/2023-03/aXklogo-1.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="http://huongdan.fit.vlute.edu.vn/uploads/images/system/2023-03/bvalogo-1.png">
+
+    
+    <!-- Custom Styles & Head Content -->
+    <style>
+    :root {
+        --color-primary: #206ea7;
+        --color-primary-light: rgba(32,110,167,0.15);
+        --color-link: #206ea7;
+        --color-bookshelf: #a94747;
+        --color-book: #077b70;
+        --color-chapter: #af4d0d;
+        --color-page: #206ea7;
+        --color-page-draft: #7e50b1;
+    }
+</style>
+    <!-- Start: custom user content -->
+<style nonce="3fchhEaL8M95FgZn1Xs1A88N">
+.page-content h1,
+.page-content h2, 
+.page-content h3, 
+.page-content h4, 
+.page-content h5, 
+.page-content h6, 
+.page-content pre {
+    clear: left;
+    font-weight: 500;
+}
+  
+.page-content h1,
+.page-content h2, 
+.page-content h3, 
+.page-content h4, 
+.page-content h5, 
+.page-content pre {
+	color: var(--color-primary);
+}
+  
+table {
+    width: 100%;
+}
+  
+td {
+    text-align: center;
+}
+  
+.page-content .CodeMirror-sizer, .page-content .CodeMirror-scroll {
+	/* background: #eeffcc; */
+}
+  
+.content-wrap code {
+    display: inline;
+    padding: 1px 3px;
+    white-space: pre-wrap;
+    line-height: 1.2em;
+    color: #e74c3c;
+    white-space: normal;
+    font-weight: bold;
+}
+  
+.page-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+</style>
+<!-- End: custom user content -->
+
+    
+    <!-- Translations for JS -->
+    </head>
+<body
+          class=" tri-layout ">
+
+        <a class="px-m py-s skip-to-content-link print-hidden" href="#main-content">Skip to main content</a>    <div component="notification"
+     option:notification:type="success"
+     option:notification:auto-hide="true"
+     option:notification:show="false"
+     style="display: none;"
+     class="notification pos"
+     role="alert">
+    <svg class="svg-icon" data-icon="check-circle" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+</svg> <span></span><div class="dismiss"><svg class="svg-icon" data-icon="close" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg></div>
+</div>
+
+<div component="notification"
+     option:notification:type="warning"
+     option:notification:auto-hide="false"
+     option:notification:show="false"
+     style="display: none;"
+     class="notification warning"
+     role="alert">
+    <svg class="svg-icon" data-icon="info" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/>
+</svg> <span></span><div class="dismiss"><svg class="svg-icon" data-icon="close" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg></div>
+</div>
+
+<div component="notification"
+     option:notification:type="error"
+     option:notification:auto-hide="false"
+     option:notification:show="false"
+     style="display: none;"
+     class="notification neg"
+     role="alert">
+    <svg class="svg-icon" data-icon="danger" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.73 3H8.27L3 8.27v7.46L8.27 21h7.46L21 15.73V8.27L15.73 3zM12 17.3c-.72 0-1.3-.58-1.3-1.3 0-.72.58-1.3 1.3-1.3.72 0 1.3.58 1.3 1.3 0 .72-.58 1.3-1.3 1.3zm1-4.3h-2V7h2v6z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg> <span></span><div class="dismiss"><svg class="svg-icon" data-icon="close" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg></div>
+</div>    <header id="header" component="header-mobile-toggle" class="primary-background">
+    <div class="grid mx-l">
+
+        <div>
+            <a href="http://huongdan.fit.vlute.edu.vn" data-shortcut="home_view" class="logo">
+                                    <img class="logo-image" src="http://huongdan.fit.vlute.edu.vn/uploads/images/system/2023-03/logo-1.png" alt="Logo">
+                                                    <span class="logo-text">VLUTE Wiki</span>
+                            </a>
+            <button type="button"
+                    refs="header-mobile-toggle@toggle"
+                    title="Expand Header Menu"
+                    aria-expanded="false"
+                    class="mobile-menu-toggle hide-over-l"><svg class="svg-icon" data-icon="more" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+</svg></button>
+        </div>
+
+        <div class="flex-container-column items-center justify-center hide-under-l">
+                        <form component="global-search" action="http://huongdan.fit.vlute.edu.vn/search" method="GET" class="search-box" role="search" tabindex="0">
+                <button id="header-search-box-button"
+                        refs="global-search@button"
+                        type="submit"
+                        aria-label="Search"
+                        tabindex="-1"><svg class="svg-icon" data-icon="search" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg></button>
+                <input id="header-search-box-input"
+                       refs="global-search@input"
+                       type="text"
+                       name="term"
+                       data-shortcut="global_search"
+                       autocomplete="off"
+                       aria-label="Search" placeholder="Search"
+                       value="">
+                <div refs="global-search@suggestions" class="global-search-suggestions card">
+                    <div refs="global-search@loading" class="text-center px-m global-search-loading"><div class="loading-container">
+    <div></div>
+    <div></div>
+    <div></div>
+    </div></div>
+                    <div refs="global-search@suggestion-results" class="px-m"></div>
+                    <button class="text-button card-footer-link" type="submit">View All</button>
+                </div>
+            </form>
+                    </div>
+
+        <nav refs="header-mobile-toggle@menu" class="header-links">
+            <div class="links text-center">
+                                    <a class="hide-over-l" href="http://huongdan.fit.vlute.edu.vn/search"><svg class="svg-icon" data-icon="search" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>Search</a>
+                    
+                    
+                                        
+                                    
+                                                        <a href="http://huongdan.fit.vlute.edu.vn/login"><svg class="svg-icon" data-icon="login" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M21 3.01H3c-1.1 0-2 .9-2 2V9h2V4.99h18v14.03H3V15H1v4.01c0 1.1.9 1.98 2 1.98h18c1.1 0 2-.88 2-1.98v-14c0-1.11-.9-2-2-2zM11 16l4-4-4-4v3H1v2h10v3z"/>
+</svg>Log in</a>
+                            </div>
+                    </nav>
+
+    </div>
+</header>
+
+    <div id="content" components="tri-layout" class="block">
+        
+    <div class="tri-layout-mobile-tabs print-hidden">
+        <div class="grid half no-break no-gap">
+            <button type="button"
+                    refs="tri-layout@tab"
+                    data-tab="info"
+                    aria-label="Tab: Show Secondary Information"
+                    class="tri-layout-mobile-tab px-m py-m text-link">
+                Info
+            </button>
+            <button type="button"
+                    refs="tri-layout@tab"
+                    data-tab="content"
+                    aria-label="Tab: Show Primary Content"
+                    aria-selected="true"
+                    class="tri-layout-mobile-tab px-m py-m text-link active">
+                Content
+            </button>
+        </div>
+    </div>
+
+    <div refs="tri-layout@container" class="tri-layout-container"  >
+
+        <div class="tri-layout-left print-hidden" id="sidebar">
+            <aside class="tri-layout-left-contents">
+                
+    
+    
+            <nav id="page-navigation" class="mb-xl" aria-label="Page Navigation">
+            <h5>Page Navigation</h5>
+            <div class="body">
+                <div class="sidebar-page-nav menu">
+                                            <li class="page-nav-item h1">
+                            <a href="#bkmrk-5.1-colormap-choices" class="text-limit-lines-1 block">1 Colormap Choices</a>
+                            <div class="link-background sidebar-page-nav-bullet"></div>
+                        </li>
+                                            <li class="page-nav-item h1">
+                            <a href="#bkmrk-5.2-depth-peeling" class="text-limit-lines-1 block">2 Depth Peeling</a>
+                            <div class="link-background sidebar-page-nav-bullet"></div>
+                        </li>
+                                            <li class="page-nav-item h1">
+                            <a href="#bkmrk-5.3-%E4%90%E1%BB%99-s%E3%A2u-tr%E6%B0%E1%BB%9Dng-v" class="text-limit-lines-1 block">3 Độ sâu trường vẽ</a>
+                            <div class="link-background sidebar-page-nav-bullet"></div>
+                        </li>
+                                            <li class="page-nav-item h1">
+                            <a href="#bkmrk-5.4-t%E1%BA%A1o-gif-movie" class="text-limit-lines-1 block">4 Tạo GIF Movie</a>
+                            <div class="link-background sidebar-page-nav-bullet"></div>
+                        </li>
+                                            <li class="page-nav-item h1">
+                            <a href="#bkmrk-5.5-t%E1%BA%A1o-gif%E2%A0b%E1%BA%B1ng-glyp" class="text-limit-lines-1 block">5 Tạo GIF bằng Glyphs</a>
+                            <div class="link-background sidebar-page-nav-bullet"></div>
+                        </li>
+                                            <li class="page-nav-item h1">
+                            <a href="#bkmrk-5.6-t%E1%BA%A1o-gif-c%E1%BB%A7a-%E4%90%E1%BB%91i" class="text-limit-lines-1 block">6 Tạo GIF của Đối tượng Tĩnh bằng Bản đồ Màu Chuyển động</a>
+                            <div class="link-background sidebar-page-nav-bullet"></div>
+                        </li>
+                                            <li class="page-nav-item h1">
+                            <a href="#bkmrk-5.7-orbiting" class="text-limit-lines-1 block">7 Orbiting</a>
+                            <div class="link-background sidebar-page-nav-bullet"></div>
+                        </li>
+                                            <li class="page-nav-item h1">
+                            <a href="#bkmrk-5.8-hi%E1%BB%83n-th%E1%BB%8B-d%E1%BB%B1a-tr%E3%AAn" class="text-limit-lines-1 block">8 Hiển thị dựa trên chất liệu</a>
+                            <div class="link-background sidebar-page-nav-bullet"></div>
+                        </li>
+                                            <li class="page-nav-item h1">
+                            <a href="#bkmrk-5.9-hi%E1%BB%83n-th%E1%BB%8B-c%E3%A1c-%E4%91%E1%BB%89n" class="text-limit-lines-1 block">9 Hiển thị các đỉnh trên lưới</a>
+                            <div class="link-background sidebar-page-nav-bullet"></div>
+                        </li>
+                                            <li class="page-nav-item h1">
+                            <a href="#bkmrk-5.10-c%E3%A1c-lo%E1%BA%A1i-shading" class="text-limit-lines-1 block">10 Các loại Shading</a>
+                            <div class="link-background sidebar-page-nav-bullet"></div>
+                        </li>
+                                    </div>
+            </div>
+        </nav>
+    
+    <nav id="book-tree"
+     class="book-tree mb-xl"
+     aria-label="Book Navigation">
+
+    <h5>Book Navigation</h5>
+
+    <ul class="sidebar-page-list mt-xs menu entity-list">
+                    <li class="list-item-book book">
+                <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d" class="book   entity-list-item" data-entity-type="book" data-entity-id="23">
+    <span role="presentation" class="icon text-book"><svg class="svg-icon" data-icon="book" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/>
+</svg></span>
+    <div class="content">
+            <h4 class="entity-list-item-name break-text">TH1345 - MÔ HÌNH HÓA HÌNH HỌC 3D</h4>
+            
+    </div>
+</a>            </li>
+        
+                    <li class="list-item-page page ">
+                <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/page/chapter-1-chuyen-anh-sang-3d-su-dung-pifuhd" class="page   entity-list-item" data-entity-type="page" data-entity-id="72">
+    <span role="presentation" class="icon text-page"><svg class="svg-icon" data-icon="page" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+</svg></span>
+    <div class="content">
+            <h4 class="entity-list-item-name break-text">Chapter 1: Chuyển ảnh sang 3D sử dụng PIFuHD</h4>
+            
+    </div>
+</a>
+                
+            </li>
+                    <li class="list-item-chapter chapter ">
+                <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/chapter/chapter-2-pyvista" class="chapter   entity-list-item" data-entity-type="chapter" data-entity-id="22">
+    <span role="presentation" class="icon text-chapter"><svg class="svg-icon" data-icon="chapter" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"/>
+</svg></span>
+    <div class="content">
+            <h4 class="entity-list-item-name break-text">Chapter 2: PyVista</h4>
+            
+    </div>
+</a>
+                                    <div class="entity-list-item no-hover">
+                        <span role="presentation" class="icon text-chapter"></span>
+                        <div class="content">
+                            <div component="chapter-contents" class="chapter-child-menu">
+    <button type="button"
+            refs="chapter-contents@toggle"
+            aria-expanded="true"
+            class="text-muted chapter-contents-toggle  open ">
+        <svg class="svg-icon" data-icon="caret-right" role="presentation"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 17.5l5-5-5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg> <svg class="svg-icon" data-icon="page" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+</svg> <span>8 Pages</span>
+    </button>
+    <ul refs="chapter-contents@list"
+        class="chapter-contents-list sub-menu inset-list  open "         style="display: block;"         role="menu">
+                    <li class="list-item-page " role="presentation">
+                <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/page/01-create-mesh-geometric-objects" class="page   entity-list-item" data-entity-type="page" data-entity-id="100">
+    <span role="presentation" class="icon text-page"><svg class="svg-icon" data-icon="page" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+</svg></span>
+    <div class="content">
+            <h4 class="entity-list-item-name break-text">01. Create Mesh - Geometric Objects</h4>
+            
+    </div>
+</a>            </li>
+                    <li class="list-item-page " role="presentation">
+                <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/page/02-mesh-creation-platonic-solids-va-polydata" class="page   entity-list-item" data-entity-type="page" data-entity-id="111">
+    <span role="presentation" class="icon text-page"><svg class="svg-icon" data-icon="page" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+</svg></span>
+    <div class="content">
+            <h4 class="entity-list-item-name break-text">02. Mesh Creation - Platonic Solids và PolyData</h4>
+            
+    </div>
+</a>            </li>
+                    <li class="list-item-page " role="presentation">
+                <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/page/03-create-point-cloud-dam-may-diem" class="page   entity-list-item" data-entity-type="page" data-entity-id="174">
+    <span role="presentation" class="icon text-page"><svg class="svg-icon" data-icon="page" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+</svg></span>
+    <div class="content">
+            <h4 class="entity-list-item-name break-text">03. Create Point Cloud - Đám mây điểm</h4>
+            
+    </div>
+</a>            </li>
+                    <li class="list-item-page " role="presentation">
+                <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/page/04-filtering-mot-so-bo-loc" class="page   entity-list-item" data-entity-type="page" data-entity-id="190">
+    <span role="presentation" class="icon text-page"><svg class="svg-icon" data-icon="page" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+</svg></span>
+    <div class="content">
+            <h4 class="entity-list-item-name break-text">04 Filtering - Một số bộ lọc</h4>
+            
+    </div>
+</a>            </li>
+                    <li class="list-item-page " role="presentation">
+                <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/page/05-plotting-truc-quan-hoa" class="page  selected entity-list-item" data-entity-type="page" data-entity-id="191">
+    <span role="presentation" class="icon text-page"><svg class="svg-icon" data-icon="page" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+</svg></span>
+    <div class="content">
+            <h4 class="entity-list-item-name break-text">05 Plotting - Trực quan hóa</h4>
+            
+    </div>
+</a>            </li>
+                    <li class="list-item-page " role="presentation">
+                <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/page/06-luoi-phi-cau-truc-unstructuredgrid" class="page   entity-list-item" data-entity-type="page" data-entity-id="215">
+    <span role="presentation" class="icon text-page"><svg class="svg-icon" data-icon="page" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+</svg></span>
+    <div class="content">
+            <h4 class="entity-list-item-name break-text">06. Lưới phi cấu trúc - UnstructuredGrid</h4>
+            
+    </div>
+</a>            </li>
+                    <li class="list-item-page " role="presentation">
+                <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/page/07-lighting" class="page   entity-list-item" data-entity-type="page" data-entity-id="198">
+    <span role="presentation" class="icon text-page"><svg class="svg-icon" data-icon="page" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+</svg></span>
+    <div class="content">
+            <h4 class="entity-list-item-name break-text">07. Lighting</h4>
+            
+    </div>
+</a>            </li>
+                    <li class="list-item-page " role="presentation">
+                <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/page/08-danh-gia-chat-luong-mesh" class="page   entity-list-item" data-entity-type="page" data-entity-id="199">
+    <span role="presentation" class="icon text-page"><svg class="svg-icon" data-icon="page" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+</svg></span>
+    <div class="content">
+            <h4 class="entity-list-item-name break-text">08. Đánh giá chất lượng mesh</h4>
+            
+    </div>
+</a>            </li>
+            </ul>
+</div>                        </div>
+                    </div>
+
+                
+            </li>
+                    <li class="list-item-page page ">
+                <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/page/chapter-3-surface-subdivision" class="page   entity-list-item" data-entity-type="page" data-entity-id="179">
+    <span role="presentation" class="icon text-page"><svg class="svg-icon" data-icon="page" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+</svg></span>
+    <div class="content">
+            <h4 class="entity-list-item-name break-text">Chapter 3: Surface Subdivision</h4>
+            
+    </div>
+</a>
+                
+            </li>
+                    <li class="list-item-page page ">
+                <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/page/chapter-4-bien-dang-luoi-3d" class="page   entity-list-item" data-entity-type="page" data-entity-id="185">
+    <span role="presentation" class="icon text-page"><svg class="svg-icon" data-icon="page" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+</svg></span>
+    <div class="content">
+            <h4 class="entity-list-item-name break-text">Chapter 4: Biến dạng lưới 3D</h4>
+            
+    </div>
+</a>
+                
+            </li>
+                    <li class="list-item-chapter chapter ">
+                <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/chapter/chapter-5-ket-xuat-rendering" class="chapter   entity-list-item" data-entity-type="chapter" data-entity-id="27">
+    <span role="presentation" class="icon text-chapter"><svg class="svg-icon" data-icon="chapter" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"/>
+</svg></span>
+    <div class="content">
+            <h4 class="entity-list-item-name break-text">Chapter 5: Kết xuất - Rendering</h4>
+            
+    </div>
+</a>
+                                    <div class="entity-list-item no-hover">
+                        <span role="presentation" class="icon text-chapter"></span>
+                        <div class="content">
+                            <div component="chapter-contents" class="chapter-child-menu">
+    <button type="button"
+            refs="chapter-contents@toggle"
+            aria-expanded="false"
+            class="text-muted chapter-contents-toggle ">
+        <svg class="svg-icon" data-icon="caret-right" role="presentation"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 17.5l5-5-5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg> <svg class="svg-icon" data-icon="page" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+</svg> <span>4 Pages</span>
+    </button>
+    <ul refs="chapter-contents@list"
+        class="chapter-contents-list sub-menu inset-list "         role="menu">
+                    <li class="list-item-page " role="presentation">
+                <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/page/01-ket-xuat-luoi-fit-mesh" class="page   entity-list-item" data-entity-type="page" data-entity-id="112">
+    <span role="presentation" class="icon text-page"><svg class="svg-icon" data-icon="page" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+</svg></span>
+    <div class="content">
+            <h4 class="entity-list-item-name break-text">01. Kết xuất lưới - Fit Mesh</h4>
+            
+    </div>
+</a>            </li>
+                    <li class="list-item-page " role="presentation">
+                <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/page/02-render-densepose-meshes" class="page   entity-list-item" data-entity-type="page" data-entity-id="113">
+    <span role="presentation" class="icon text-page"><svg class="svg-icon" data-icon="page" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+</svg></span>
+    <div class="content">
+            <h4 class="entity-list-item-name break-text">02. Render DensePose Meshes</h4>
+            
+    </div>
+</a>            </li>
+                    <li class="list-item-page " role="presentation">
+                <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/page/03-render-colored-pointclouds" class="page   entity-list-item" data-entity-type="page" data-entity-id="114">
+    <span role="presentation" class="icon text-page"><svg class="svg-icon" data-icon="page" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+</svg></span>
+    <div class="content">
+            <h4 class="entity-list-item-name break-text">03. Render Colored Pointclouds</h4>
+            
+    </div>
+</a>            </li>
+                    <li class="list-item-page " role="presentation">
+                <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/page/04-camera-position-optimization-with-differentiable-rendering" class="page   entity-list-item" data-entity-type="page" data-entity-id="116">
+    <span role="presentation" class="icon text-page"><svg class="svg-icon" data-icon="page" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+</svg></span>
+    <div class="content">
+            <h4 class="entity-list-item-name break-text">04. Camera Position Optimization with Differentiable Rendering</h4>
+            
+    </div>
+</a>            </li>
+            </ul>
+</div>                        </div>
+                    </div>
+
+                
+            </li>
+                    <li class="list-item-page page ">
+                <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/page/chapter-6-on-tap" class="page   entity-list-item" data-entity-type="page" data-entity-id="217">
+    <span role="presentation" class="icon text-page"><svg class="svg-icon" data-icon="page" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+</svg></span>
+    <div class="content">
+            <h4 class="entity-list-item-name break-text">Chapter 6: Ôn tập</h4>
+            
+    </div>
+</a>
+                
+            </li>
+            </ul>
+</nav>            </aside>
+        </div>
+
+        <div class=" tri-layout-middle">
+            <div id="main-content" class="tri-layout-middle-contents">
+                
+    <div class="mb-m print-hidden">
+        <nav class="breadcrumbs text-center" aria-label="Breadcrumb">
+    
+    
+            
+        <a href="#" class="text-book icon-list-item outline-hover">
+            <span><svg class="svg-icon" data-icon="books" role="presentation"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19.252 1.708H8.663a1.77 1.77 0 0 0-1.765 1.764v14.12c0 .97.794 1.764 1.765 1.764h10.59a1.77 1.77 0 0 0 1.764-1.765V3.472a1.77 1.77 0 0 0-1.765-1.764zM8.663 3.472h4.412v7.06L10.87 9.208l-2.206 1.324z"/><path d="M30.61 3.203h24v24h-24z" fill="none"/><path d="M2.966 6.61v14c0 1.1.9 2 2 2h14v-2h-14v-14z"/></svg></span>
+            <span>Books</span>
+        </a>
+            
+    
+    
+            
+                
+                                    <div class="dropdown-search" components="dropdown dropdown-search"
+     option:dropdown-search:url="/search/entity/siblings?entity_type=book&entity_id=23"
+     option:dropdown-search:local-search-selector=".entity-list-item"
+>
+    <div class="dropdown-search-toggle-breadcrumb" refs="dropdown@toggle"
+         aria-haspopup="true" aria-expanded="false" tabindex="0">
+        <div class="separator"><svg class="svg-icon" data-icon="chevron-right" role="presentation"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/><path d="M0 0h24v24H0z" fill="none"/></svg></div>
+    </div>
+    <div refs="dropdown@menu" class="dropdown-search-dropdown card" role="menu">
+        <div class="dropdown-search-search">
+            <svg class="svg-icon" data-icon="search" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>            <input refs="dropdown-search@searchInput"
+                   aria-label="Search"
+                   autocomplete="off"
+                   placeholder="Search"
+                   type="text">
+        </div>
+        <div refs="dropdown-search@loading">
+            <div class="loading-container">
+    <div></div>
+    <div></div>
+    <div></div>
+    </div>        </div>
+        <div refs="dropdown-search@listContainer" class="dropdown-search-list px-m" tabindex="-1"></div>
+    </div>
+</div>                        <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d" class="text-book icon-list-item outline-hover">
+                <span><svg class="svg-icon" data-icon="book" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/>
+</svg></span>
+                <span>
+                    TH1345 - MÔ HÌNH HÓA H...
+                </span>
+            </a>
+                            
+                
+                                    <div class="dropdown-search" components="dropdown dropdown-search"
+     option:dropdown-search:url="/search/entity/siblings?entity_type=chapter&entity_id=22"
+     option:dropdown-search:local-search-selector=".entity-list-item"
+>
+    <div class="dropdown-search-toggle-breadcrumb" refs="dropdown@toggle"
+         aria-haspopup="true" aria-expanded="false" tabindex="0">
+        <div class="separator"><svg class="svg-icon" data-icon="chevron-right" role="presentation"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/><path d="M0 0h24v24H0z" fill="none"/></svg></div>
+    </div>
+    <div refs="dropdown@menu" class="dropdown-search-dropdown card" role="menu">
+        <div class="dropdown-search-search">
+            <svg class="svg-icon" data-icon="search" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>            <input refs="dropdown-search@searchInput"
+                   aria-label="Search"
+                   autocomplete="off"
+                   placeholder="Search"
+                   type="text">
+        </div>
+        <div refs="dropdown-search@loading">
+            <div class="loading-container">
+    <div></div>
+    <div></div>
+    <div></div>
+    </div>        </div>
+        <div refs="dropdown-search@listContainer" class="dropdown-search-list px-m" tabindex="-1"></div>
+    </div>
+</div>                        <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/chapter/chapter-2-pyvista" class="text-chapter icon-list-item outline-hover">
+                <span><svg class="svg-icon" data-icon="chapter" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"/>
+</svg></span>
+                <span>
+                    Chapter 2: PyVista
+                </span>
+            </a>
+                            
+                
+                                    <div class="dropdown-search" components="dropdown dropdown-search"
+     option:dropdown-search:url="/search/entity/siblings?entity_type=page&entity_id=191"
+     option:dropdown-search:local-search-selector=".entity-list-item"
+>
+    <div class="dropdown-search-toggle-breadcrumb" refs="dropdown@toggle"
+         aria-haspopup="true" aria-expanded="false" tabindex="0">
+        <div class="separator"><svg class="svg-icon" data-icon="chevron-right" role="presentation"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/><path d="M0 0h24v24H0z" fill="none"/></svg></div>
+    </div>
+    <div refs="dropdown@menu" class="dropdown-search-dropdown card" role="menu">
+        <div class="dropdown-search-search">
+            <svg class="svg-icon" data-icon="search" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>            <input refs="dropdown-search@searchInput"
+                   aria-label="Search"
+                   autocomplete="off"
+                   placeholder="Search"
+                   type="text">
+        </div>
+        <div refs="dropdown-search@loading">
+            <div class="loading-container">
+    <div></div>
+    <div></div>
+    <div></div>
+    </div>        </div>
+        <div refs="dropdown-search@listContainer" class="dropdown-search-list px-m" tabindex="-1"></div>
+    </div>
+</div>                        <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/page/05-plotting-truc-quan-hoa" class="text-page icon-list-item outline-hover">
+                <span><svg class="svg-icon" data-icon="page" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+</svg></span>
+                <span>
+                    05 Plotting - Trực qua...
+                </span>
+            </a>
+                    </nav>    </div>
+
+    <main class="content-wrap card">
+        <div component="page-display"
+             option:page-display:page-id="191"
+             class="page-content clearfix">
+            <div dir="auto">
+
+    <h1 class="break-text" id="bkmrk-page-title">05 Plotting - Trực quan hóa</h1>
+
+    <div style="clear:left;"></div>
+
+            <h4 id="bkmrk-5.1-colormap-choices"><span style="color: rgb(7, 23, 152);"><strong>1 Colormap Choices</strong></span></h4>
+<p id="bkmrk-import-th%E6%B0-vi%E1%BB%87n"><strong>import thư viện</strong></p>
+<pre id="bkmrk-from-matplotlib.colo"><code class="language-python">from matplotlib.colors import ListedColormap
+import matplotlib.pyplot as plt
+import numpy as np
+import pyvista as pv
+from pyvista import examples</code></pre>
+<p id="bkmrk-b%E1%BA%A3n-%E4%91%E1%BB%93-m%E3%A0u-t%E3%B9y-ch%E1%BB%89nh"><strong>Bản đồ màu tùy chỉnh</strong></p>
+<pre id="bkmrk-mesh-%3D-examples.down"><code class="language-python">mesh = examples.download_st_helens().warp_by_scalar()
+# Add scalar array with range (0, 100) that correlates with elevation
+mesh['values'] = pv.plotting.normalize(mesh['Elevation']) * 100</code></pre>
+<p id="bkmrk-x%E3%A2y-d%E1%BB%B1ng-m%E1%BB%99t-b%E1%BA%A3n-%E4%91%E1%BB%93-"><strong>Xây dựng một bản đồ màu tùy chỉnh</strong></p>
+<pre id="bkmrk-%23-define-the-colors-"><code class="language-python"># Define the colors we want to use
+blue = np.array([12 / 256, 238 / 256, 246 / 256, 1.0])
+black = np.array([11 / 256, 11 / 256, 11 / 256, 1.0])
+grey = np.array([189 / 256, 189 / 256, 189 / 256, 1.0])
+yellow = np.array([255 / 256, 247 / 256, 0 / 256, 1.0])
+red = np.array([1.0, 0.0, 0.0, 1.0])
+
+mapping = np.linspace(mesh['values'].min(), mesh['values'].max(), 256)
+newcolors = np.empty((256, 4))
+newcolors[mapping &gt;= 80] = red
+newcolors[mapping &lt; 80] = grey
+newcolors[mapping &lt; 55] = yellow
+newcolors[mapping &lt; 30] = blue
+newcolors[mapping &lt; 1] = black
+
+# Make the colormap from the listed colors
+my_colormap = ListedColormap(newcolors)</code></pre>
+<p id="bkmrk-%E4%90%E6%A1n-gi%E1%BA%A3n-ch%E1%BB%89-c%E1%BA%A7n-chu"><strong>Đơn giản chỉ cần chuyển bản đồ màu cho thói quen vẽ đồ thị.</strong></p>
+<pre id="bkmrk-mesh.plot%28scalars%3D%27v"><code class="language-python">mesh.plot(scalars='values', cmap=my_colormap)</code></pre>
+<p id="bkmrk-"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/r3Qimage.png" target="_blank" rel="noopener"><img class="align-center" src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/scaled-1680-/r3Qimage.png" alt="image.png" width="544" height="325"></a></p>
+<p id="bkmrk-t%E1%BA%A1o-m%E1%BB%99t-b%E1%BA%A3n-%E4%91%E1%BB%93-m%E3%A0u-%E4%91%E6"><strong>Tạo một bản đồ màu đơn giản</strong></p>
+<pre id="bkmrk-boring_cmap-%3D-plt.cm"><code class="language-python">boring_cmap = plt.cm.get_cmap("viridis", 5)
+mesh.plot(scalars='values', cmap=boring_cmap)</code></pre>
+<p id="bkmrk--0"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/RBJimage.png" target="_blank" rel="noopener"><img class="align-center" src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/scaled-1680-/RBJimage.png" alt="image.png" width="499" height="299"></a></p>
+<p id="bkmrk-chia-b%E1%BA%A3n-%E4%91%E1%BB%93-m%E3%A0u-th%E3%A0nh"><strong>Chia bản đồ màu thành 5 phần bằng nhau.</strong></p>
+<pre id="bkmrk-mesh.plot%28scalars%3Dme"><code class="language-python">mesh.plot(scalars=mesh['values'], cmap=['black', 'blue', 'yellow', 'grey', 'red'])</code></pre>
+<p id="bkmrk--1"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/AlOimage.png" target="_blank" rel="noopener"><img class="align-center" src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/scaled-1680-/AlOimage.png" alt="image.png" width="586" height="328"></a></p>
+<p id="bkmrk-n%E1%BA%BFu-b%E1%BA%A1n-v%E1%BA%ABn-mu%E1%BB%91n-ki%E1%BB%83"><strong>Nếu bạn vẫn muốn kiểm soát việc phân tách các giá trị, bạn có thể thực hiện việc này bằng cách tạo một mảng vô hướng và chuyển mảng đó tới máy vẽ cùng với bản đồ màu</strong></p>
+<pre id="bkmrk-scalars-%3D-np.empty%28m"><code class="language-python">scalars = np.empty(mesh.n_points)
+scalars[mesh['values'] &gt;= 80] = 4  # red
+scalars[mesh['values'] &lt; 80] = 3  # grey
+scalars[mesh['values'] &lt; 55] = 2  # yellow
+scalars[mesh['values'] &lt; 30] = 1  # blue
+scalars[mesh['values'] &lt; 1] = 0  # black
+
+mesh.plot(scalars=scalars, cmap=['black', 'blue', 'yellow', 'grey', 'red'])</code></pre>
+<p id="bkmrk--2"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/iryimage.png" target="_blank" rel="noopener"><img class="align-center" src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/scaled-1680-/iryimage.png" alt="image.png" width="568" height="348"></a></p>
+<p id="bkmrk-matplotlib-so-v%E1%BB%9Bi-co"><span style="color: rgb(0, 0, 0);"><strong>Matplotlib so với Colorcet </strong></span></p>
+<pre id="bkmrk-p-%3D-pv.plotter%28shape"><code class="language-python">p = pv.Plotter(shape=(2, 2), border=False)
+p.subplot(0, 0)
+p.add_mesh(
+    mesh,
+    scalars='Elevation',
+    cmap="fire",
+    lighting=True,
+    scalar_bar_args={'title': "Colorcet Fire"},
+)
+
+p.subplot(0, 1)
+p.add_mesh(
+    mesh,
+    scalars='Elevation',
+    cmap="fire",
+    lighting=False,
+    scalar_bar_args={'title': "Colorcet Fire (No Lighting)"},
+)
+
+p.subplot(1, 0)
+p.add_mesh(
+    mesh,
+    scalars='Elevation',
+    cmap="hot",
+    lighting=True,
+    scalar_bar_args={'title': "Matplotlib Hot"},
+)
+
+p.subplot(1, 1)
+p.add_mesh(
+    mesh,
+    scalars='Elevation',
+    cmap="hot",
+    lighting=False,
+    scalar_bar_args={'title': "Matplotlib Hot (No Lighting)"},
+)
+
+p.show()</code></pre>
+<p id="bkmrk--3"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/vOAimage.png" target="_blank" rel="noopener"><img class="align-center" src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/scaled-1680-/vOAimage.png" alt="image.png" width="647" height="486"></a></p>
+<h4 id="bkmrk-5.2-depth-peeling"><span style="color: rgb(7, 23, 152);"><strong>2 Depth Peeling</strong></span></h4>
+<p id="bkmrk-kh%E1%BB%FFi-t%E1%BA%A1o-%E4%91%E1%BB%91i-t%E6%B0%E1%BB%A3ng"><span style="color: rgb(0, 0, 0);"><strong>Khởi tạo đối tượng</strong></span></p>
+<pre id="bkmrk-centers-%3D-%5B%280%2C-0%2C-0%29"><code class="language-python">centers = [(0, 0, 0), (1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0)]
+radii = [1, 0.5, 0.5, 0.5, 0.5]
+spheres = pv.MultiBlock()
+for i, c in enumerate(centers):
+    spheres.append(pv.Sphere(center=c, radius=radii[i]))</code></pre>
+<p id="bkmrk-hi%E1%BB%83n-th%E1%BB%8B-%E4%91%E1%BB%91i-t%E6%B0%E1%BB%A3ng"><strong>Hiển thị đối tượng ở chế độ Standard và Depth Peeling</strong></p>
+<pre id="bkmrk-dargs-%3D-dict%28opacity"><code class="language-python">dargs = dict(opacity=0.5, color="red", smooth_shading=True)
+
+p = pv.Plotter(shape=(1, 2), multi_samples=8)
+
+p.add_mesh(spheres, **dargs)
+p.enable_depth_peeling(10)
+p.add_text("Depth Peeling")
+
+p.subplot(0, 1)
+p.add_text("Standard")
+p.add_mesh(spheres.copy(), **dargs)
+
+p.link_views()
+p.camera_position = [(11.7, 4.7, -4.33), (0.0, 0.0, 0.0), (0.3, 0.07, 0.9)]
+p.show()</code></pre>
+<p id="bkmrk--4"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/aduimage.png" target="_blank" rel="noopener"><img class="align-center" src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/scaled-1680-/aduimage.png" alt="image.png" width="608" height="456"></a></p>
+<p id="bkmrk-v%E3%AD-d%E1%BB%A5-2%3A"><strong>Ví dụ 2:</strong></p>
+<pre id="bkmrk-mesh-%3D-examples.down-0"><code class="language-python">mesh = examples.download_brain().contour(5)
+cmap = "viridis_r"
+
+p = pv.Plotter(shape=(1, 2), multi_samples=4)
+
+p.add_mesh(mesh, opacity=0.5, cmap=cmap)
+p.enable_depth_peeling(10)
+p.add_text("Depth Peeling")
+
+p.subplot(0, 1)
+p.add_text("Standard")
+p.add_mesh(mesh.copy(), opacity=0.5, cmap=cmap)
+
+p.link_views()
+p.camera_position = [(418.3, 659.0, 53.8), (90.2, 111.5, 90.0), (0.03, 0.05, 1.0)]
+p.show()</code></pre>
+<p id="bkmrk--5"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/CZmimage.png" target="_blank" rel="noopener"><img class="align-center" src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/scaled-1680-/CZmimage.png" alt="image.png" width="580" height="435"></a></p>
+<h4 id="bkmrk-5.3-%E4%90%E1%BB%99-s%E3%A2u-tr%E6%B0%E1%BB%9Dng-v"><span style="color: rgb(7, 23, 152);"><strong>3 Độ sâu trường vẽ</strong></span></h4>
+<p id="bkmrk-t%E1%BA%A1o-nhi%E1%BB%81u-%E4%91%E1%BB%91i-t%E6%B0%E1%BB%A3n"><span style="color: rgb(0, 0, 0);"><strong>Tạo nhiều đối tượng bằng glyph</strong></span></p>
+<pre id="bkmrk-%23-download-the-stanf"><code class="language-python"># download the stanford bunny and rotate it into a good position
+mesh = examples.download_bunny()
+mesh = mesh.rotate_x(90, inplace=False).rotate_z(90, inplace=False).scale(4, 4, 4)
+
+# We use a uniform grid here simply to create equidistantly spaced points for
+# our glyph filter
+grid = pv.UniformGrid(dimensions=(4, 3, 3), spacing=(3, 1, 1))
+
+bunnies = grid.glyph(geom=mesh, scale=False, orient=False)
+bunnies</code></pre>
+<p id="bkmrk-hi%E1%BB%83n-th%E1%BB%8B-%E4%91%E1%BB%91i-t%E6%B0%E1%BB%A3ng-0"><strong>Hiển thị đối tượng</strong></p>
+<pre id="bkmrk-%23-convert-points-int"><code class="language-python"># convert points into rgba colors
+colors = bunnies.points - bunnies.bounds[::2]
+colors /= colors.max(axis=0)
+colors *= 255
+colors = colors.astype(np.uint8)
+
+# obtained camera position with `cpos = pl.show(return_cpos)`
+cpos = [(11.6159, -1.2803, 1.5338), (4.1354, 1.4796, 1.2711), (-0.0352, -0.0004, 1.0)]
+
+# Since we're using physically based rendering (PBR), let's also download a
+# skybox cubemap use it as an environment texture. For PBR to work well you
+# should have a environment texture.
+cubemap = examples.download_sky_box_cube_map()
+
+pl = pv.Plotter()
+pl.background_color = 'w'
+pl.add_mesh(bunnies, scalars=colors, rgb=True, pbr=True, metallic=0.85)
+pl.camera_position = cpos
+pl.set_environment_texture(cubemap)
+pl.show()</code></pre>
+<p id="bkmrk--6"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/17kimage.png" target="_blank" rel="noopener"><img class="align-center" src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/scaled-1680-/17kimage.png" alt="image.png" width="603" height="453"></a></p>
+<p id="bkmrk-hi%E1%BB%83n-th%E1%BB%8B-%E4%91%E1%BB%91i-t%E6%B0%E1%BB%A3ng-1"><strong>Hiển thị đối tượng áp dụng độ sâu trường ảnh</strong></p>
+<pre id="bkmrk-pl-%3D-pv.plotter%28%29-pl"><code class="language-python">pl = pv.Plotter()
+pl.background_color = 'w'
+pl.add_mesh(bunnies, scalars=colors, rgb=True, pbr=True, metallic=0.85)
+pl.camera_position = cpos
+pl.enable_depth_of_field()
+pl.enable_anti_aliasing('ssaa')
+pl.set_environment_texture(cubemap)
+pl.show()</code></pre>
+<p id="bkmrk--7"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/DoGimage.png" target="_blank" rel="noopener"><img class="align-center" src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/scaled-1680-/DoGimage.png" alt="image.png" width="588" height="441"></a></p>
+<h4 id="bkmrk-5.4-t%E1%BA%A1o-gif-movie"><span style="color: rgb(7, 23, 152);"><strong>4 Tạo GIF Movie</strong></span></h4>
+<p id="bkmrk-kh%E1%BB%FFi-t%E1%BA%A1o-%E4%91%E1%BB%91i-t%E6%B0%E1%BB%A3ng-0"><span style="color: rgb(0, 0, 0);"><strong>Khởi tạo đối tượng</strong></span></p>
+<pre id="bkmrk-x-%3D-np.arange%28-10%2C-1"><code class="language-python">x = np.arange(-10, 10, 0.5)
+y = np.arange(-10, 10, 0.5)
+x, y = np.meshgrid(x, y)
+r = np.sqrt(x**2 + y**2)
+z = np.sin(r)
+
+# Create and structured surface
+grid = pv.StructuredGrid(x, y, z)
+grid.plot()</code></pre>
+<p id="bkmrk--8"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/PJEimage.png" target="_blank" rel="noopener"><img class="align-center" src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/scaled-1680-/PJEimage.png" alt="image.png" width="402" height="302"></a></p>
+<p id="bkmrk-t%E1%BA%A1o-gif"><strong>Tạo GIF</strong></p>
+<pre id="bkmrk-%23-create-a-plotter-o"><code class="language-python"># Create a plotter object and set the scalars to the Z height
+plotter = pv.Plotter(notebook=False, off_screen=True)
+plotter.add_mesh(
+    grid,
+    scalars=z.ravel(),
+    lighting=False,
+    show_edges=True,
+    scalar_bar_args={"title": "Height"},
+    clim=[-1, 1],
+)
+
+# Open a gif
+plotter.open_gif("wave.gif")
+
+pts = grid.points.copy()
+
+# Update Z and write a frame for each updated position
+nframe = 15
+for phase in np.linspace(0, 2 * np.pi, nframe + 1)[:nframe]:
+    z = np.sin(r + phase)
+    pts[:, -1] = z.ravel()
+    plotter.update_coordinates(pts, render=False)
+    plotter.update_scalars(z.ravel(), render=False)
+
+    # Write a frame. This triggers a render.
+    plotter.write_frame()
+
+# Closes and finalizes movie
+plotter.close()</code></pre>
+<p id="bkmrk--9"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/sphx-glr-gif-002.gif" target="_blank" rel="noopener"><img class="align-center" src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/sphx-glr-gif-002.gif" alt="sphx_glr_gif_002.gif" width="557" height="418"></a></p>
+<h4 id="bkmrk-5.5-t%E1%BA%A1o-gif%E2%A0b%E1%BA%B1ng-glyp"><span style="color: rgb(7, 23, 152);"><strong>5 Tạo GIF bằng Glyphs</strong></span></h4>
+<p id="bkmrk-t%E1%BA%A1o-h%E3%ACnh-kh%E1%BB%91i-c%E1%BA%A7u"><span style="color: rgb(0, 0, 0);"><strong>Tạo hình khối cầu</strong></span></p>
+<pre id="bkmrk-x-%3D-np.arange%28-10%2C-1-0"><code class="language-python">x = np.arange(-10, 10, 1, dtype=float)
+y = np.arange(-10, 10, 1, dtype=float)
+x, y = np.meshgrid(x, y)
+r = np.sqrt(x**2 + y**2)
+z = (np.sin(r) + 1) / 2
+
+# Create and structured surface
+grid = pv.StructuredGrid(x, y, z)
+grid.point_data['size'] = z.ravel()
+
+# generate glyphs with varying size
+sphere = pv.Sphere()
+spheres = grid.glyph(scale='size', geom=sphere, orient=False)
+
+spheres.plot(show_scalar_bar=False)</code></pre>
+<p id="bkmrk--10"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/xNaimage.png" target="_blank" rel="noopener"><img class="align-center" src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/scaled-1680-/xNaimage.png" alt="image.png" width="448" height="336"></a></p>
+<p id="bkmrk-t%E1%BA%A1o-gif-0"><strong>Tạo GIF</strong></p>
+<pre id="bkmrk-%23-create-a-plotter-o-0"><code class="language-python"># Create a plotter object and set the scalars to the Z height
+plotter = pv.Plotter(notebook=False)
+plotter.add_mesh(
+    spheres,
+    show_edges=False,
+    show_scalar_bar=False,
+    clim=[0, 1],
+    cmap='bwr',
+)
+
+# Open a gif
+plotter.open_gif("glyph_wave.gif")
+
+# Update Z and write a frame for each updated mesh
+nframe = 30
+for phase in np.linspace(0, 2 * np.pi, nframe + 1)[:nframe]:
+    z = (np.sin(r + phase) + 1) / 2
+
+    # regenerate spheres
+    grid = pv.StructuredGrid(x, y, z)
+    grid.point_data['size'] = z.ravel()
+    new_spheres = grid.glyph(scale='size', geom=sphere, orient=False)
+
+    spheres.copy_from(new_spheres)
+
+    # Write a frame. This triggers a render.
+    plotter.write_frame()
+
+# Close and finalize the gif
+plotter.close()</code></pre>
+<p id="bkmrk--11"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/sphx-glr-movie-glyphs-002.gif" target="_blank" rel="noopener"><img class="align-center" src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/sphx-glr-movie-glyphs-002.gif" alt="sphx_glr_movie_glyphs_002.gif" width="589" height="442"></a></p>
+<h4 id="bkmrk-5.6-t%E1%BA%A1o-gif-c%E1%BB%A7a-%E4%90%E1%BB%91i"><span style="color: rgb(7, 23, 152);"><strong>6 Tạo GIF của Đối tượng Tĩnh bằng Bản đồ Màu Chuyển động</strong></span></h4>
+<p id="bkmrk-x%E3%A2y-d%E1%BB%B1ng-h%E3%A0m-scurve"><span style="color: rgb(0, 0, 0);"><strong>Xây dựng hàm scurve</strong></span></p>
+<pre id="bkmrk-%23-a-spherical-curve-"><code class="language-python"># A spherical curve
+def scurve(t):
+    alpha = np.pi / 2 - (np.pi / 2 - 0.44) * np.cos(3 * t)
+    beta = t + 0.44 * np.sin(6 * t)
+    return np.array([np.sin(alpha) * np.cos(beta), np.sin(alpha) * np.sin(beta), np.cos(alpha)])</code></pre>
+<p id="bkmrk-x%E3%A2y-d%E1%BB%B1ng-h%E3%A0m-hopf-fibe"><strong>Xây dựng hàm hopf fiber</strong></p>
+<pre id="bkmrk-%23-hopf-fiber-def-hop"><code class="language-python"># Hopf fiber
+def hopf_fiber(p, phi):
+    return np.array(
+        [
+            (1 + p[2]) * np.cos(phi),
+            p[0] * np.sin(phi) - p[1] * np.cos(phi),
+            p[0] * np.cos(phi) + p[1] * np.sin(phi),
+            (1 + p[2]) * np.sin(phi),
+        ]
+    ) / np.sqrt(2 * (1 + p[2]))</code></pre>
+<p id="bkmrk-x%E3%A2y-d%E1%BB%B1ng-h%E3%A0m-stereo-pr"><strong>Xây dựng hàm stereo projection</strong><br></p>
+<pre id="bkmrk-%23-stereographic-proj"><code class="language-python"># Stereographic projection
+def stereo_proj(q):
+    return q[0:3] / (1 - q[3])</code></pre>
+<p id="bkmrk-x%E3%A2y-d%E1%BB%B1ng-h%E3%A0m-hopf-toru"><strong>Xây dựng hàm hopf torus</strong><br></p>
+<pre id="bkmrk-%23-parameterization-o"><code class="language-python"># Parameterization of the Hopf torus
+def hopf_torus(t, phi):
+    return stereo_proj(hopf_fiber(scurve(t), phi))</code></pre>
+<p id="bkmrk-kh%E1%BB%FFi-t%E1%BA%A1o-mesh"><strong>Khởi tạo mesh</strong><br></p>
+<pre id="bkmrk-%23-create-the-mesh-an"><code class="language-python"># Create the mesh
+angle_u = np.linspace(-np.pi, np.pi, 400)
+angle_v = np.linspace(0, np.pi, 200)
+u, v = np.meshgrid(angle_u, angle_v)
+x, y, z = hopf_torus(u, v)
+grid = pv.StructuredGrid(x, y, z)
+mesh = grid.extract_geometry().clean(tolerance=1e-6)</code></pre>
+<p id="bkmrk-t%E3%ADnh-kho%E1%BA%A3ng-c%E3%A1ch"><strong>Tính khoảng cách</strong></p>
+<pre id="bkmrk-%23-distances-normaliz"><code class="language-python"># Distances normalized to [0, 2*pi]
+dists = np.linalg.norm(mesh.points, axis=1)
+dists = 2 * np.pi * (dists - dists.min()) / (dists.max() - dists.min())</code></pre>
+<p id="bkmrk-t%E1%BA%A1o-animate"><strong>Tạo animate</strong><br></p>
+<pre id="bkmrk-pltr-%3D-pv.plotter%28wi"><code class="language-python">pltr = pv.Plotter(window_size=[512, 512])
+pltr.set_focus([0, 0, 0])
+pltr.set_position([40, 0, 0])
+pltr.add_mesh(
+    mesh,
+    scalars=np.sin(dists),
+    smooth_shading=True,
+    specular=1,
+    cmap="nipy_spectral",
+    show_scalar_bar=False,
+)
+pltr.open_gif("Hopf_torus.gif")
+for t in np.linspace(0, 2 * np.pi, 60, endpoint=False):
+    pltr.update_scalars(np.sin(dists - t), render=False)
+    pltr.write_frame()
+
+pltr.show()</code></pre>
+<p id="bkmrk--12"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/sphx-glr-moving-cmap-001.gif" target="_blank" rel="noopener"><img class="align-center" src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/sphx-glr-moving-cmap-001.gif" alt="sphx_glr_moving_cmap_001.gif" width="410" height="410"></a></p>
+<h4 id="bkmrk-5.7-orbiting"><span style="color: rgb(7, 23, 152);"><strong>7 Orbiting</strong></span></h4>
+<p id="bkmrk-kh%E1%BB%FFi-t%E1%BA%A1o-%E4%91%E3%B3i-t%E6%B0%E1%BB%A3ng"><span style="color: rgb(0, 0, 0);"><strong>Khởi tạo đói tượng</strong></span></p>
+<pre id="bkmrk-mesh-%3D-examples.down-1"><code class="language-python">mesh = examples.download_st_helens().warp_by_scalar()</code></pre>
+<p id="bkmrk-quay-%E4%91%E1%BB%91i-t%E6%B0%E1%BB%A3ng"><strong>Quay đối tượng</strong></p>
+<pre id="bkmrk-p-%3D-pv.plotter%28%29-p.a"><code class="language-python">p = pv.Plotter()
+p.add_mesh(mesh, lighting=False)
+p.camera.zoom(1.5)
+p.show(auto_close=False)
+path = p.generate_orbital_path(n_points=36, shift=mesh.length)
+p.open_gif("orbit.gif")
+p.orbit_on_path(path, write_frames=True)
+p.close()</code></pre>
+<p id="bkmrk--13"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/sphx-glr-orbit-001.gif" target="_blank" rel="noopener"><img class="align-center" src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/sphx-glr-orbit-001.gif" alt="sphx_glr_orbit_001.gif" width="556" height="417"></a></p>
+<p id="bkmrk-quay-%E4%91%E1%BB%91i-t%E6%B0%E1%BB%A3ng-the"><strong>Quay đối tượng theo quỹ đạo</strong></p>
+<pre id="bkmrk-mesh-%3D-examples.down-2"><code class="language-python">mesh = examples.download_dragon()
+viewup = [0, 1, 0]
+p = pv.Plotter()
+p.add_mesh(mesh)
+p.show(auto_close=False)
+path = p.generate_orbital_path(factor=2.0, n_points=36, viewup=viewup, shift=0.2)
+p.open_gif("orbit.gif")
+p.orbit_on_path(path, write_frames=True, viewup=viewup, step=0.05)
+p.close()</code></pre>
+<p id="bkmrk--14"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/dra.gif" target="_blank" rel="noopener"><img class="align-center" src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/dra.gif" alt="dra.gif" width="473" height="355"></a></p>
+<h4 id="bkmrk-5.8-hi%E1%BB%83n-th%E1%BB%8B-d%E1%BB%B1a-tr%E3%AAn"><span style="color: rgb(7, 23, 152);"><strong>8 Hiển thị dựa trên chất liệu</strong></span></h4>
+<p id="bkmrk-kh%E1%BB%FFi-t%E1%BA%A1o-%E4%91%E1%BB%91i-t%E6%B0%E1%BB%A3ng-1"><strong>Khởi tạo đối tượng</strong></p>
+<pre id="bkmrk-mesh-%3D-examples.down-3"><code class="language-python">mesh = examples.download_nefertiti()
+mesh.rotate_x(-90.0, inplace=True)  # rotate to orient with the skybox
+cubemap = examples.download_sky_box_cube_map()</code></pre>
+<p id="bkmrk-hi%E1%BB%83n-th%E1%BB%8B-%E4%91%E1%BB%91i-t%E6%B0%E1%BB%A3ng-2"><strong>Hiển thị đối tượng</strong></p>
+<pre id="bkmrk-p-%3D-pv.plotter%28%29-p.a-0"><code class="language-python">p = pv.Plotter()
+p.add_actor(cubemap.to_skybox())
+p.set_environment_texture(cubemap)  # For reflecting the environment off the mesh
+p.add_mesh(mesh, color='linen', pbr=True, metallic=0.8, roughness=0.1, diffuse=1)
+cpos = [(-313.40, 66.09, 1000.61), (0.0, 0.0, 0.0), (0.018, 0.99, -0.06)]
+p.show(cpos=cpos)</code></pre>
+<p id="bkmrk--15"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/Wroimage.png" target="_blank" rel="noopener"><img class="align-center" src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/scaled-1680-/Wroimage.png" alt="image.png" width="506" height="380"></a></p>
+<p id="bkmrk-hi%E1%BB%83n-th%E1%BB%8B-s%E1%BB%B1-thay-%E4%91%E1%BB%95"><strong>Hiển thị sự thay đổi của các thông số kim loại và độ nhám</strong></p>
+<pre id="bkmrk-colors-%3D-%5B%27red%27%2C-%27te"><code class="language-python">colors = ['red', 'teal', 'black', 'orange', 'silver']
+p = pv.Plotter()
+p.set_environment_texture(cubemap)
+for i in range(5):
+    for j in range(6):
+        sphere = pv.Sphere(radius=0.5, center=(0.0, 4 - i, j))
+        p.add_mesh(sphere, color=colors[i], pbr=True, metallic=i / 4, roughness=j / 5)
+p.view_vector((-1, 0, 0), (0, 1, 0))
+p.show()</code></pre>
+<p id="bkmrk--16"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/wnYimage.png" target="_blank" rel="noopener"><img class="align-center" src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/scaled-1680-/wnYimage.png" alt="image.png" width="377" height="283"></a></p>
+<p id="bkmrk-k%E1%BA%BFt-h%E1%BB%A3p-%E3%A1nh-s%E3%A1ng-v%E3%A0-k%E1%BA%BFt"><strong>Kết hợp ánh sáng và kết xuất chất liệu</strong></p>
+<pre id="bkmrk-mesh-%3D-examples.down-4"><code class="language-python">mesh = examples.download_louis_louvre()
+mesh.rotate_z(140, inplace=True)
+plotter = pv.Plotter(lighting=None)
+plotter.set_background('black')
+plotter.add_mesh(mesh, color='linen', pbr=True, metallic=0.5, roughness=0.5, diffuse=1)
+light = pv.Light((-2, 2, 0), (0, 0, 0), 'white')
+plotter.add_light(light)
+light = pv.Light((2, 0, 0), (0, 0, 0), (0.7, 0.0862, 0.0549))
+plotter.add_light(light)
+light = pv.Light((0, 0, 10), (0, 0, 0), 'white')
+plotter.add_light(light)
+plotter.camera_position = [(9.51, 13.92, 15.81), (-2.836, -0.93, 10.2), (-0.22, -0.18, 0.959)]
+cpos = plotter.show()</code></pre>
+<p id="bkmrk--17"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/8VWimage.png" target="_blank" rel="noopener"><img class="align-center" src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/scaled-1680-/8VWimage.png" alt="image.png" width="510" height="383"></a></p>
+<h4 id="bkmrk-5.9-hi%E1%BB%83n-th%E1%BB%8B-c%E3%A1c-%E4%91%E1%BB%89n"><span style="color: rgb(7, 23, 152);"><strong>9 Hiển thị các đỉnh trên lưới</strong></span></h4>
+<p id="bkmrk-kh%E1%BB%FFi-t%E1%BA%A1o-%E4%91%E1%BB%91i-t%E6%B0%E1%BB%A3ng-2"><strong>Khởi tạo đối tượng</strong></p>
+<pre id="bkmrk-mesh-%3D-examples.down-5"><code class="language-">mesh = examples.download_bunny_coarse()
+cpos = [(0.036, 0.367, 0.884), (0.024, 0.033, -0.022), (-0.303, 0.895, -0.325)]</code></pre>
+<p id="bkmrk-hi%E1%BB%83n-th%E1%BB%8B-point"><strong>Hiển thị point</strong></p>
+<pre id="bkmrk-pl-%3D-pv.plotter%28%29-pl-0"><code class="language-python">pl = pv.Plotter()
+pl.add_mesh(mesh, style='points', color='magenta', render_points_as_spheres=True, point_size=10)
+pl.show(cpos=cpos)</code></pre>
+<p id="bkmrk-hi%E1%BB%83n-th%E1%BB%8B-c%E1%BA%A1nh"><strong>Hiển thị cạnh</strong><br></p>
+<pre id="bkmrk-pl-%3D-pv.plotter%28%29-pl-1"><code class="language-python">pl = pv.Plotter()
+pl.add_mesh(mesh, show_edges=True)
+pl.show(cpos=cpos)</code></pre>
+<p id="bkmrk-k%E1%BA%BFt-h%E1%BB%A3p"><strong>Kết hợp</strong></p>
+<pre id="bkmrk-pl-%3D-pv.plotter%28%29-pl-2"><code class="language-python">pl = pv.Plotter()
+pl.add_mesh(
+    mesh,
+    show_edges=True,
+    vertex_color='magenta',
+    render_points_as_spheres=True,
+    point_size=10,
+    show_vertices=True,
+)
+pl.show(cpos=cpos)</code></pre>
+<p id="bkmrk--18" class="align-left"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/Aunimage.png" target="_blank" rel="noopener"><img src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/scaled-1680-/Aunimage.png" alt="image.png" width="249" height="187"></a><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/mdXimage.png" target="_blank" rel="noopener"><img class="align-left" src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/scaled-1680-/mdXimage.png" alt="image.png" width="231" height="173"></a><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/biTimage.png" target="_blank" rel="noopener"><img src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/scaled-1680-/biTimage.png" alt="image.png" width="243" height="183"></a></p>
+<p id="bkmrk-t%E3%B4-m%E3%A0u-theo-v%E1%BB%8B-tr%E3%AD-y"><strong>Tô màu theo vị trí Y</strong></p>
+<pre id="bkmrk-surf_points-%3D-mesh.e"><code class="language-python">surf_points = mesh.extract_surface().points
+pl = pv.Plotter()
+pl.add_mesh(mesh, show_edges=True)
+pl.add_points(
+    surf_points,
+    color='magenta',
+    render_points_as_spheres=True,
+    point_size=10,
+    scalars=surf_points[:, 1],
+    lighting=False,
+    show_scalar_bar=False,
+)
+pl.show(cpos=cpos)</code></pre>
+<p id="bkmrk--19"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/VJyimage.png" target="_blank" rel="noopener"><img class="align-center" src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/scaled-1680-/VJyimage.png" alt="image.png" width="373" height="280"></a></p>
+<h4 id="bkmrk-5.10-c%E3%A1c-lo%E1%BA%A1i-shading"><span style="color: rgb(7, 23, 152);"><strong>10 Các loại Shading</strong></span></h4>
+<p id="bkmrk-kh%E1%BB%FFi-t%E1%BA%A1o-%E4%91%E1%BB%91i-t%E6%B0%E1%BB%A3ng-3"><strong><span style="color: rgb(0, 0, 0);">Khởi tạo đối tượng</span></strong></p>
+<pre id="bkmrk-mesh-%3D-examples.load"><code class="language-python">mesh = examples.load_nut()
+mesh.plot()</code></pre>
+<p id="bkmrk-t%E1%BA%A1o-hi%E1%BB%87u-%E1%BB%A9ng-b%E3%B3ng-m%E1%BB%8Bn"><strong>Tạo hiệu ứng bóng mịn cho đối tượng</strong></p>
+<pre id="bkmrk-mesh.plot%28smooth_sha"><code class="language-python">mesh.plot(smooth_shading=True, split_sharp_edges=True)</code></pre>
+<p id="bkmrk--20"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/RC4image.png" target="_blank" rel="noopener"><img class="align-left" src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/scaled-1680-/RC4image.png" alt="image.png" width="334" height="251"></a></p>
+<p id="bkmrk--21"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/7RHimage.png" target="_blank" rel="noopener"><img src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/scaled-1680-/7RHimage.png" alt="image.png" width="320" height="240"></a></p>
+<p id="bkmrk-%E2%A0-0"><br></p>
+<p id="bkmrk-hi%E1%BB%83n-th%E1%BB%8B-c%E3%A1c-c%E1%BA%A1nh"><strong>Hiển thị các cạnh</strong><br></p>
+<pre id="bkmrk-%23-extract-the-featur"><code class="language-python"># extract the feature edges exceeding 30 degrees
+edges = mesh.extract_feature_edges(
+    boundary_edges=False, non_manifold_edges=False, feature_angle=30, manifold_edges=False
+)
+pl = pyvista.Plotter()
+pl.enable_anti_aliasing()
+pl.add_mesh(mesh, smooth_shading=True, split_sharp_edges=True)
+pl.add_mesh(edges, color='k', line_width=5)
+pl.show()</code></pre>
+<p id="bkmrk-hi%E1%BB%83n-th%E1%BB%8B-ch%E1%BA%A5t-li%E1%BB%87u"><strong>Hiển thị chất liệu</strong></p>
+<pre id="bkmrk-pl-%3D-pyvista.plotter"><code class="language-python">pl = pyvista.Plotter()
+pl.enable_anti_aliasing()
+pl.add_mesh(mesh, color='w', split_sharp_edges=True, pbr=True, metallic=1.0, roughness=0.5)
+pl.show()</code></pre>
+<p id="bkmrk--22"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/crXimage.png" target="_blank" rel="noopener"><img class="align-left" src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/scaled-1680-/crXimage.png" alt="image.png" width="360" height="270"></a></p>
+<p id="bkmrk--23"><a href="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/hnKimage.png" target="_blank" rel="noopener"><img src="http://huongdan.fit.vlute.edu.vn/uploads/images/gallery/2023-05/scaled-1680-/hnKimage.png" alt="image.png" width="369" height="277"></a></p>
+    </div>        </div>
+        <div component="pointer"
+     option:pointer:page-id="191"
+     id="pointer"
+     class="pointer-container">
+    <div class="pointer anim " >
+        <span class="icon mr-xxs"><svg class="svg-icon" data-icon="link" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
+</svg> <svg class="svg-icon" data-icon="include" role="presentation" style="display:none;"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 .5h24v24H0z" fill="none"/>
+    <path d="M12 16.5l4-4h-3v-9h-2v9H8l4 4zm9-13h-6v1.99h6v14.03H3V5.49h6V3.5H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2v-14c0-1.1-.9-2-2-2z"/>
+</svg></span>
+        <div class="input-group inline block">
+            <input readonly="readonly" type="text" id="pointer-url" placeholder="url">
+            <button class="button outline icon" data-clipboard-target="#pointer-url" type="button" title="Copy Link"><svg class="svg-icon" data-icon="copy" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+</svg></button>
+        </div>
+            </div>
+</div>    </main>
+
+    <div id="sibling-navigation" class="grid half collapse-xs items-center mb-m px-m no-row-gap fade-in-when-active print-hidden">
+    <div>
+                    <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/page/04-filtering-mot-so-bo-loc" data-shortcut="previous" class="outline-hover no-link-style block rounded">
+                <div class="px-m pt-xs text-muted">Previous</div>
+                <div class="inline-block">
+                    <div class="icon-list-item no-hover">
+                        <span class="text-page "><svg class="svg-icon" data-icon="page" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+</svg></span>
+                        <span>04 Filtering - Một số bộ lọc</span>
+                    </div>
+                </div>
+            </a>
+            </div>
+    <div>
+                    <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/page/06-luoi-phi-cau-truc-unstructuredgrid" data-shortcut="next" class="outline-hover no-link-style block rounded text-xs-right">
+                <div class="px-m pt-xs text-muted text-xs-right">Next</div>
+                <div class="inline block">
+                    <div class="icon-list-item no-hover">
+                        <span class="text-page "><svg class="svg-icon" data-icon="page" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+</svg></span>
+                        <span>06. Lưới phi cấu trúc - UnstructuredGrid</span>
+                    </div>
+                </div>
+            </a>
+            </div>
+</div>
+                </div>
+        </div>
+
+        <div class="tri-layout-right print-hidden">
+            <aside class="tri-layout-right-contents">
+                    <!-- <div id="page-details" class="entity-details mb-xl">
+        <h5>Details</h5>
+        <div class="blended-links">
+            <div class="entity-meta">
+    
+            <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/page/05-plotting-truc-quan-hoa/revisions" class="entity-meta-item">
+            <svg class="svg-icon" data-icon="history" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/>
+</svg>Revision #9
+        </a>
+    
+    
+            <div class="entity-meta-item">
+            <svg class="svg-icon" data-icon="star" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>            <div>
+                Created <span title="Sat, May 27, 2023 6:13 AM">1 month ago</span> by <a href='http://huongdan.fit.vlute.edu.vn/user/hoangquyen'>HoangQuyen</a>
+            </div>
+        </div>
+    
+            <div class="entity-meta-item">
+            <svg class="svg-icon" data-icon="edit" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>            <div>
+                Updated <span title="Mon, Jun 19, 2023 7:31 AM">2 weeks ago</span> by <a href='http://huongdan.fit.vlute.edu.vn/user/hoangquyen'>HoangQuyen</a>
+            </div>
+        </div>
+    
+    </div>
+                            <div class="active-restriction">
+                                            <div class="entity-meta-item">
+                            <svg class="svg-icon" data-icon="lock" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path d="M0 0h24v24H0V0z" id="a"/>
+    </defs>
+    <clipPath id="b">
+        <use overflow="visible" xlink:href="#a"/>
+    </clipPath>
+    <path clip-path="url(#b)" d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM8.9 6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2H8.9V6zM18 20H6V10h12v10z"/>
+</svg>                            <div>Book Permissions Active</div>
+                        </div>
+                                    </div>
+            
+            
+            
+                    </div>
+    </div> -->
+
+    <div class="actions mb-xl">
+        <h5>Actions</h5>
+
+        <div class="icon-list text-link">
+
+            
+                                                <a href="http://huongdan.fit.vlute.edu.vn/books/th1345-mo-hinh-hoa-hinh-hoc-3d/page/05-plotting-truc-quan-hoa/revisions" data-shortcut="revisions" class="icon-list-item">
+                <span><svg class="svg-icon" data-icon="history" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/>
+</svg></span>
+                <span>Revisions</span>
+            </a>
+                        
+            <hr class="primary-background"/>
+
+                                </div>
+
+    </div>
+            </aside>
+        </div>
+    </div>
+
+    </div>
+
+    
+    <div component="back-to-top" class="back-to-top print-hidden">
+        <div class="inner">
+            <svg class="svg-icon" data-icon="chevron-up" role="presentation"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg> <span>Back to top</span>
+        </div>
+    </div>
+
+        <script src="http://huongdan.fit.vlute.edu.vn/dist/app.js?version=v23.01.1" nonce="3fchhEaL8M95FgZn1Xs1A88N"></script>
+    
+    </body>
+</html>
